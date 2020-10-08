@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity5"
+    android:padding="20dp"
+    android:background="@drawable/fondo1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AUTENTICACION"
+        android:textSize="46sp"
+        android:textColor="@color/fondotransparente2"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="80dp"
+        android:id="@+id/titulo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USUARIO"
+        android:textColor="#fff"
+        android:layout_below="@+id/titulo"
+        android:layout_marginTop="40dp"
+        android:textSize="23sp"
+        android:id="@+id/txtusuario"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="30dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/fondotransparente"
+        android:padding="5dp"
+        android:ems="10"
+        android:layout_toEndOf="@+id/txtusuario"
+        android:layout_below="@+id/titulo"
+        android:layout_marginTop="40dp"
+        android:id="@+id/edittextusuario"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PASSWORD:"
+        android:textColor="#fff"
+        android:textSize="23sp"
+        android:layout_below="@+id/txtusuario"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="40dp"
+        android:id="@+id/txtpassword"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="9"
+        android:background="@color/fondotransparente"
+        android:padding="5dp"
+        android:layout_below="@id/edittextusuario"
+        android:layout_toEndOf="@id/txtpassword"
+        android:layout_marginTop="37dp"
+        android:id="@+id/edittextpassword"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="autenticar"
+        android:padding="20dp"
+        android:layout_below="@+id/txtpassword"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/btnautenticar"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="registrar"
+        android:padding="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/btnregistrar"
+        android:layout_marginBottom="20dp"
+        android:background="@color/fondotransparente2"/>
+
+</RelativeLayout>
