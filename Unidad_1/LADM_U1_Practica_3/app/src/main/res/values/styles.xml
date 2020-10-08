@@ -7,4 +7,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="botoncalculadora">
+
+        <item name="android:paddingBottom">60dp</item>
+        <item name="android:paddingTop">60dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginBottom">15dp</item>
+    </style>
+    
 </resources>

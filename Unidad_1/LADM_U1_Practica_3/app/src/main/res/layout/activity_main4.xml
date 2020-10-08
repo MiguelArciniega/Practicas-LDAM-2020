@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo4"
+    android:padding="15dp"
+    tools:context=".MainActivity4">
+
+    <TableRow android:padding="10dp"
+        android:background="@color/fondotransparente"
+        android:layout_marginBottom="20dp">
+
+        <Button android:text="9"/>
+        <Button android:text="8"/>
+        <Button android:text="7"/>
+        <Button android:text="/"/>
+
+    </TableRow>
+
+    <TableRow android:padding="10dp"
+        android:background="@color/fondotransparente2"
+        android:layout_marginBottom="20dp">
+
+        <ImageView android:src="@drawable/icono5"/>
+        <ImageView android:src="@drawable/icono5"/>
+        <ImageView android:src="@drawable/icono5"/>
+        <ImageView android:src="@drawable/icono5"/>
+
+    </TableRow>
+
+    <TableRow android:padding="10dp"
+        android:background="@color/fondotransparente"
+        android:layout_marginBottom="20dp">
+
+        <ImageView android:src="@drawable/icono4"
+            android:layout_weight="1"/>
+
+    </TableRow>
+
+    <TableRow android:padding="10dp"
+        android:background="@color/fondotransparente2"
+        android:layout_marginBottom="20dp">
+
+        <ImageView android:src="@drawable/icono2"
+            android:layout_weight="1"/>
+
+        <ImageView android:src="@drawable/icono2"
+            android:layout_weight="1"/>
+
+    </TableRow>
+
+    <TableRow android:padding="10dp"
+        android:background="@color/fondotransparente"
+        android:layout_marginBottom="20dp">
+
+        <ImageView android:src="@drawable/icono1"
+            android:layout_weight="1"/>
+
+        <ImageView android:src="@drawable/icono3"
+            android:layout_weight="1"/>
+
+        <ImageView android:src="@drawable/icono6"
+            android:layout_weight="1"/>
+
+    </TableRow>
+
+</TableLayout>
