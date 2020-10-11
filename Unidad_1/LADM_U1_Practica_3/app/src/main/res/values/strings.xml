@@ -3,4 +3,15 @@
     <string name="boton1">boton1</string>
     <string name="boton3">boton3</string>
     <string name="boton2">boton2</string>
+
+    <array name="opcionesmenuprincipal">
+
+        <item>FrameLayout</item>
+        <item>LinearLayout</item>
+        <item>GridLayout</item>
+        <item>TableLayout(TableRow)</item>
+        <item>RelativeLayout</item>
+        <item>Salir</item>
+
+    </array>
 </resources>
