@@ -12,17 +12,29 @@ class Principal : AppCompatActivity() {
 
         menuppal.setOnItemClickListener { adapterView, view, pos, l ->
             when(pos){
-                pos -> 0 {
-                    var act1 = Intent(this, MainActivity::class.java)
+                0->{
+                    var act = Intent(this, MainActivity::class.java)
+                    startActivity(act)
                 }
-                pos -> 1
-                    var act2 = Intent(this, MainActivity2::class.java)
-                pos -> 2
-                    var act3 = Intent(this, MainActivity3::class.java)
-                pos -> 3
-                    var act4 = Intent(this, MainActivity4::class.java)
-                pos -> 4
-                    var actP = Intent(this, Principal::class.java)
+                1->{
+                    var act = Intent(this, MainActivity2::class.java)
+                    startActivity(act)
+                }
+                2->{
+                    var act = Intent(this, MainActivity3::class.java)
+                    startActivity(act)
+                }
+                3->{
+                    var act= Intent(this, MainActivity4::class.java)
+                    startActivity(act)
+                }
+                4->{
+                    var act = Intent(this, MainActivity5::class.java)
+                    startActivity(act)
+                }
+                5->{
+                    finish()
+                }
             }
         }
     }
