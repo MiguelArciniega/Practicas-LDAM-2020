@@ -8,18 +8,18 @@
     android:padding="20dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="#ff0000"
-        android:textSize="30dp"
-        android:layout_marginBottom="40dp"/>
-
+        android:id="@+id/texto"/>
     <Button
-        android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ejecutar" />
+        android:text="GUARDAR"
+        android:id="@+id/guardar"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/abrir"
+        android:text="ABRIR"/>
 </LinearLayout>
