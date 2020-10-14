@@ -1,9 +1,11 @@
 package mx.tecnm.tepic.ladm_u1_practica_5
 
 import android.content.Context
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
+import androidx.core.app.ActivityCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.*
 import java.nio.file.Files
@@ -12,6 +14,24 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        permiso.setOnClickListener {
+            if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+                ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE),0)
+            }
+        }
+
+        concedido.setOnClickListener {
+            if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
+                AlertDialog.Builder(this)
+                    .setMessage("SI TIENES PERMISO DE ESCRITURA")
+                    .show()
+            }else{
+                AlertDialog.Builder(this)
+                    .setMessage("NO HAY PERMISOS DE ESCRITURA")
+                    .show()
+            }
+        }
 
         guardar.setOnClickListener {
             if(guardarEnMemoriaInterna()==true){
@@ -27,7 +47,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
         abrir.setOnClickListener {
-            if(LeerDeMemoria()==true){
+            if(AbrirEnMemoriaInterna().isEmpty() == false){
+                AlertDialog.Builder(this).setTitle("ATENCION")
+                    .setMessage("SE LEYÓ LA DATA")
+                    .setPositiveButton("ok"){d,i->d.dismiss()}
+                    .show()
             }else{
                 AlertDialog.Builder(this).setTitle("ERROR")
                     .setMessage("NO SE PUDO ABRIR EL ARCHIVO")
@@ -37,17 +61,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun LeerDeMemoria() : Boolean {
+    private fun AbrirEnMemoriaInterna() : String {
+        var contenido = ""
         try {
             var flujoEntrada = BufferedReader(InputStreamReader(openFileInput("archivo.txt")))
-            AlertDialog.Builder(this).setTitle("TEXTO GUARDADO")
-                .setMessage(flujoEntrada.readLine().toString())
-                .setPositiveButton("ok"){d,i->d.dismiss()}
-                .show()
+            contenido = flujoEntrada.readLine()
+            flujoEntrada.close()
         }catch (io:IOException){
-            return false;
+            return ""
         }
-        return true;
+        return contenido
     }
 
     private fun guardarEnMemoriaInterna(): Boolean {
