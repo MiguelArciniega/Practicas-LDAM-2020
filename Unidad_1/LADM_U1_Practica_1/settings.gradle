@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "LADM_U1_Practica_1"
+rootProject.name = "U1_Tarea1"
