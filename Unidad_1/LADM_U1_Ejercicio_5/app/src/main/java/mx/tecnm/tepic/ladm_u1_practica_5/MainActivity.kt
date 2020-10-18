@@ -63,10 +63,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun AbrirEnMemoriaInterna() : String {
         var contenido = ""
+        var name = "archivo.txt"
         try {
-            var flujoEntrada = BufferedReader(InputStreamReader(openFileInput("archivo.txt")))
+            var flujoEntrada = BufferedReader(InputStreamReader(openFileInput(name)))
             contenido = flujoEntrada.readLine()
             flujoEntrada.close()
+            AlertDialog.Builder(this).setTitle(name)
+                .setMessage(contenido)
+                .setPositiveButton(contenido){d,i->d.dismiss()}
+                .show()
         }catch (io:IOException){
             return ""
         }
@@ -75,7 +80,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun guardarEnMemoriaInterna(): Boolean {
         try {
-            var flujoSalida = OutputStreamWriter(openFileOutput("archivo.txt", Context.MODE_PRIVATE))
+            var name = "archivo.txt"
+            var flujoSalida = OutputStreamWriter(openFileOutput(name, Context.MODE_PRIVATE))
             var data = texto.text.toString()
             flujoSalida.write(data)
             flujoSalida.flush()
