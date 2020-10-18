@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         abrir.setOnClickListener {
             if(rInt.isChecked()){
                 if (!name.text.toString().isEmpty()){
-                    if(AbrirEnMemoriaExterna().isEmpty() == false){
+                    if(AbrirEnMemoriaInterna().isEmpty() == false){
                         AlertDialog.Builder(this).setTitle("ATENCION")
                             .setMessage("SE LEYÓ LA DATA")
                             .setPositiveButton("ok"){d,i->d.dismiss()}
